@@ -1,6 +1,6 @@
-import React from "react";
 import { action } from "@storybook/addon-actions";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import React from "react";
 import { Button } from "../";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
