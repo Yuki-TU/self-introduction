@@ -6,6 +6,7 @@ services:
     ports:
       - "3000:3000" # 開発用
       - "4000:4000" # 本番用
+      - "6006:6006" # storybook
     volumes:
       - ./app:/app
     command: yarn dev
