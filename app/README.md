@@ -19,6 +19,8 @@
 $ yarn dev
 ```
 
+`http://localhost:3000`にアクセス
+
 - リンター(ESlint)
 
 ```sh
@@ -45,4 +47,14 @@ $ yarn build
 $ yarn start
 ```
 
+`http://localhost:4000`にアクセス
+
 その前に`yarn build`を実行する必要がある
+
+- storybook 起動
+
+```sh
+$ yarn storybook
+```
+
+`http://localhost:6006`にアクセス
