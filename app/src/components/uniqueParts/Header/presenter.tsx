@@ -25,9 +25,9 @@ const HeaderComponent = (props: Props) => (
           onClick={props.onclickHome}
         />
       </div>
-      <Button onClick={props.onclickHome}>HOME</Button>
-      <Button>ABOUT</Button>
-      <Button>CONTACT</Button>
+      <Button onClick={props.onclickHome} label="HOME" />
+      <Button label="ABOUT" />
+      <Button label="CONTACT" />
     </div>
   </header>
 );
