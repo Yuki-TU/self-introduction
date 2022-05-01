@@ -6,7 +6,8 @@
     "plugin:import/recommended",
     "plugin:import/typescript",
     "plugin:import/warnings",
-    "plugin:tailwindcss/recommended" // class名を整形したりする
+    "plugin:tailwindcss/recommended", // class名を整形したりする
+    "plugin:storybook/recommended"
   ],
   "rules": {
     // import の順番をルール化
