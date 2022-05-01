@@ -1,4 +1,5 @@
 import router from "next/router";
+import { memo } from "react";
 import HeaderComponent from "./presenter";
 
 /**
@@ -9,4 +10,4 @@ const HeaderContainer = () => {
   return <HeaderComponent onclickHome={() => router.push("/")} />;
 };
 
-export default HeaderContainer; // HeaderDom;
+export default memo(HeaderContainer);
