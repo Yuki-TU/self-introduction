@@ -5,12 +5,16 @@ import HeaderComponent from "./presenter";
 describe("Headerコンポーネントはヘッダー部分の共通コンポーネント", () => {
   describe("ヘッダーには各種メニューがある", () => {
     test("メニューの1つに、HOMEがあり、その文字列が存在する", () => {
-      const { getByText } = render(<HeaderComponent onclickHome={jest.fn()} />);
+      const { getByText } = render(
+        <HeaderComponent onclickHome={jest.fn()} onclickAbout={jest.fn()} />
+      );
       expect(getByText("HOME")).toBeTruthy();
     });
     test("HOMEを押すとonclickHomeが呼ばれる", async () => {
       const onClickMock = jest.fn();
-      render(<HeaderComponent onclickHome={onClickMock} />);
+      render(
+        <HeaderComponent onclickHome={onClickMock} onclickAbout={jest.fn()} />
+      );
 
       // クリック
       const user = userEvent.setup();

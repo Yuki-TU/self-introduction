@@ -5,6 +5,7 @@ import { Button } from "../../uiParts";
 type Props = {
   /** ホームボタン・ロゴを押された時の処理 */
   onclickHome: MouseEventHandler<HTMLElement> | undefined;
+  onclickAbout: MouseEventHandler<HTMLElement> | undefined;
 };
 /**
  * ヘッダーコンポーネント
@@ -26,7 +27,7 @@ const HeaderComponent = (props: Props) => (
         />
       </div>
       <Button onClick={props.onclickHome} label="HOME" />
-      <Button label="ABOUT" />
+      <Button onClick={props.onclickAbout} label="ABOUT" />
       <Button label="CONTACT" />
     </div>
   </header>
