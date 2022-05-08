@@ -32,4 +32,5 @@ module.exports = {
     // Important: return the modified config
     return config;
   },
+  staticDirs: ["../public"], // 画像の参照ディレクトリ
 };

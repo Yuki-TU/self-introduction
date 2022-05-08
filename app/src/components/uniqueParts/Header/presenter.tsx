@@ -5,6 +5,7 @@ import { Button } from "../../uiParts";
 type Props = {
   /** ホームボタン・ロゴを押された時の処理 */
   onclickHome: MouseEventHandler<HTMLElement> | undefined;
+  onclickAbout: MouseEventHandler<HTMLElement> | undefined;
 };
 /**
  * ヘッダーコンポーネント
@@ -12,23 +13,21 @@ type Props = {
  * @returns コンポーネント
  */
 const HeaderComponent = (props: Props) => (
-  <header className="sm:py-7">
-    <div className="flex px-[15px] mx-auto max-w-[1230px]">
-      <div className="flex-1">
-        <Image
-          className="cursor-pointer"
-          src="/logo.png"
-          alt="logo"
-          objectFit="cover"
-          width="100"
-          height="55"
-          onClick={props.onclickHome}
-        />
-      </div>
-      <Button onClick={props.onclickHome} label="HOME" />
-      <Button label="ABOUT" />
-      <Button label="CONTACT" />
+  <header className="flex px-[15px] mx-auto w-full md:py-7 md:w-[1230px]">
+    <div className="flex-1">
+      <Image
+        className="cursor-pointer"
+        src="/logo.png"
+        alt="logo"
+        objectFit="cover"
+        width="100"
+        height="55"
+        onClick={props.onclickHome}
+      />
     </div>
+    <Button onClick={props.onclickHome} label="HOME" />
+    <Button onClick={props.onclickAbout} label="ABOUT" />
+    <Button label="CONTACT" />
   </header>
 );
 

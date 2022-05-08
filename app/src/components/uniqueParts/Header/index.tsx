@@ -7,7 +7,12 @@ import HeaderComponent from "./presenter";
  * @returns ヘッダーコンポーネント
  */
 const HeaderContainer = () => {
-  return <HeaderComponent onclickHome={() => router.push("/")} />;
+  return (
+    <HeaderComponent
+      onclickHome={() => router.push("/")}
+      onclickAbout={() => router.push("/about")}
+    />
+  );
 };
 
 export default memo(HeaderContainer);
