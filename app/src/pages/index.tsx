@@ -17,15 +17,27 @@ const Home: NextPage = () => {
       </Head>
       <Header />
       <main className="flex-1">
-        <Image
-          className="mt-[200px]"
-          src="/home.png"
-          alt="logo"
-          objectFit="cover"
-          sizes="100vw"
-          height="425"
-          width="1440"
-        />
+        <div className="hidden sm:inline">
+          <Image
+            src="/home.png"
+            alt="logo"
+            objectFit="cover"
+            sizes="100vw"
+            layout="responsive"
+            height="300"
+            width="800"
+          />
+        </div>
+        <div className="sm:hidden">
+          <Image
+            src="/home.png"
+            alt="logo"
+            objectFit="cover"
+            sizes="100vw"
+            height="425"
+            width="440"
+          />
+        </div>
       </main>
       <Footer />
     </div>
