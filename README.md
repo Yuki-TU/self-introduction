@@ -25,7 +25,7 @@ $ docker-compose run --rm front yarn install --frozen-lockfile
 $ docker-compose up -d
 ```
 
-[http://localhost:3001/](http://localhost:3001/)にアクセス
+[http://localhost:3000/](http://localhost:3000/)にアクセス
 
 - コンテナ内にログイン
 
