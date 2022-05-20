@@ -46,7 +46,7 @@ const Home: NextPage = () => {
             width="440"
           />
         </div>
-        <h1 className="text-[40px] text-center">ABOUT</h1>
+        <h1 className="mt-4 text-[40px] text-center">ABOUT</h1>
         <div className="flex flex-col px-3 md:flex-row md:mx-0">
           <Avatar
             className="flex-1 my-8 mx-auto md:pl-20 "
