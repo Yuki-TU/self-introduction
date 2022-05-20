@@ -15,11 +15,11 @@ type Props = {
  * @returns コンポーネント
  */
 const ArticleComponent = (props: Props) => (
-  <div className={clsx(props.className, "my-12")}>
+  <section className={clsx(props.className, "my-12")}>
     <h1 className="text-2xl">{props.title}</h1>
     <div className="border-2 border-y-black"></div>
     <p className="mt-5">{props.text}</p>
-  </div>
+  </section>
 );
 
 export default ArticleComponent;
