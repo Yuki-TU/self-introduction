@@ -10,7 +10,8 @@
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'",
     "test": "jest --watchAll",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "api:build": "aspida"
   },
   "dependencies": {
     "@aspida/fetch": "^1.10.2",
