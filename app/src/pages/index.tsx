@@ -17,7 +17,7 @@ const Home: NextPage = () => {
     "大学時代は、IT会社でVue.jsによるアプリの開発を経験。新卒で組み込み系の開発経験を経て、現在は、動画を扱う会社で主にReactアプリケーション開発に従事。動画配信技術の基礎を学びつつ、Web開発の基本を学びました。主に、書籍をベースにより良いコードの書き方、プログラミングをする上に注意すべきことを学びました。また、コードレビューの導入、ドキュメントのテンプレート化、アジャイルスクラムを一部導入した開発の提案・推進をしてきました。";
 
   return (
-    <div className="flex flex-col mx-auto w-full min-h-screen md:w-[1230px]">
+    <div className="flex flex-col">
       <Head>
         <title>y&apos;s room</title>
         <meta name="description" content="自己紹介のトップページです。" />
