@@ -6,6 +6,7 @@ type Props = {
   /** ホームボタン・ロゴを押された時の処理 */
   onclickHome: MouseEventHandler<HTMLElement> | undefined;
   onclickBlog: MouseEventHandler<HTMLElement> | undefined;
+  onclickContact: MouseEventHandler<HTMLElement> | undefined;
 };
 /**
  * ヘッダーコンポーネント
@@ -27,7 +28,7 @@ const HeaderComponent = (props: Props) => (
     </div>
     <Button onClick={props.onclickHome} label="HOME" />
     <Button onClick={props.onclickBlog} label="BLOG" />
-    <Button label="CONTACT" />
+    <Button onClick={props.onclickContact} label="CONTACT" />
   </header>
 );
 
