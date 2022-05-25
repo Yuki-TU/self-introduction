@@ -11,6 +11,7 @@ const HeaderContainer = () => {
     <HeaderComponent
       onclickHome={() => router.push("/")}
       onclickBlog={() => router.push("/blog")}
+      onclickContact={() => router.push("/contact")}
     />
   );
 };
