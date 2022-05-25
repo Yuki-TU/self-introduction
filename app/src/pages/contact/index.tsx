@@ -18,31 +18,31 @@ const Home: NextPage = () => {
       <main className="flex-1 mx-auto w-full md:w-[1230px]">
         <h1 className="mb-10 text-[40px] text-center">CONTACT</h1>
         <a
-          className="block m-10 text-3xl text-center"
+          className="block my-10 mx-auto w-fit text-3xl"
           href="https://twitter.com/nerusan_main"
         >
           Twitter
         </a>
         <a
-          className="block m-10 text-3xl text-center"
+          className="block my-10 mx-auto w-fit text-3xl"
           href="https://speakerdeck.com/nerusan_main"
         >
           Speaker Deck
         </a>
         <a
-          className="block m-10 text-3xl text-center"
+          className="block my-10  mx-auto w-fit  text-3xl "
           href="https://github.com/Yuki-TU"
         >
           GitHub
         </a>
         <a
-          className="block m-10 text-3xl text-center"
+          className="block my-10 mx-auto w-fit text-3xl "
           href="https://qiita.com/Yuki-TU"
         >
           Qiita
         </a>
         <a
-          className="block m-10 text-3xl text-center"
+          className="block  my-10 mx-auto  w-fit text-3xl "
           href="https://zenn.dev/yuki_tu"
         >
           Zenn
