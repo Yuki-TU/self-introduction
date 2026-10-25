@@ -12,7 +12,7 @@ import { Footer, Header } from "../../components/uniqueParts";
  */
 export default function BlogId({ blog }: { blog: Content }) {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex min-h-screen flex-col">
       <Head>
         <title>y&apos;s room - {blog.title}</title>
         <meta name="description" content="自己紹介のトップページです。" />
@@ -21,7 +21,7 @@ export default function BlogId({ blog }: { blog: Content }) {
       <Header />
       <main className="flex-1 px-3">
         <h1 className="text-3xl font-bold">{blog.title}</h1>
-        <p className="my-3 text-sm text-right text-[#777]">
+        <p className="my-3 text-right text-sm text-[#777]">
           作成日: {getDate(blog.createdAt)}
         </p>
         <div

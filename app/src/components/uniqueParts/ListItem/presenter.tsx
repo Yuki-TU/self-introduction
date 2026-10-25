@@ -17,12 +17,12 @@ type Props = Content & {
  */
 const ListItem = React.memo((props: Props) => (
   <div
-    className="py-2 shadow-md cursor-pointer"
+    className="cursor-pointer py-2 shadow-md"
     onClick={() => router.push(props.href)}
   >
     <div className="p-4">
       <h3
-        className="overflow-hidden mb-1 text-lg font-bold text-ellipsis whitespace-nowrap"
+        className="mb-1 truncate text-lg font-bold"
         title={props.title}
       >
         {props.title}

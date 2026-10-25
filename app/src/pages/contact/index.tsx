@@ -8,41 +8,41 @@ import { Footer, Header } from "../../components/uniqueParts";
  */
 const Home: NextPage = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex min-h-screen flex-col">
       <Head>
         <title>y&apos;s room - CONTACT</title>
         <meta name="description" content="自己紹介のCONTACTページです。" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className="flex-1 mx-auto w-full md:w-[1230px]">
-        <h1 className="mb-10 text-[40px] text-center">CONTACT</h1>
+      <main className="mx-auto w-full flex-1 md:w-[1230px]">
+        <h1 className="mb-10 text-center text-[40px]">CONTACT</h1>
         <a
-          className="block my-10 mx-auto w-fit text-3xl"
+          className="mx-auto my-10 block w-fit text-3xl"
           href="https://twitter.com/nerusan_main"
         >
           Twitter
         </a>
         <a
-          className="block my-10 mx-auto w-fit text-3xl"
+          className="mx-auto my-10 block w-fit text-3xl"
           href="https://speakerdeck.com/nerusan_main"
         >
           Speaker Deck
         </a>
         <a
-          className="block my-10  mx-auto w-fit  text-3xl "
+          className="mx-auto my-10  block w-fit  text-3xl "
           href="https://github.com/Yuki-TU"
         >
           GitHub
         </a>
         <a
-          className="block my-10 mx-auto w-fit text-3xl "
+          className="mx-auto my-10 block w-fit text-3xl "
           href="https://qiita.com/Yuki-TU"
         >
           Qiita
         </a>
         <a
-          className="block  my-10 mx-auto  w-fit text-3xl "
+          className="mx-auto  my-10 block  w-fit text-3xl "
           href="https://zenn.dev/yuki_tu"
         >
           Zenn
