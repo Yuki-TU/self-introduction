@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* リセットCSX */
-@import url("normalize.css");
-
 html,
 body {
   padding: 0;
