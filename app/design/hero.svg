@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 720" width="1920" height="720">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0F172A"/><stop offset="0.55" stop-color="#312E81"/><stop offset="1" stop-color="#0E7490"/></linearGradient>
+<radialGradient id="glow1" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#818CF8" stop-opacity="0.55"/><stop offset="1" stop-color="#818CF8" stop-opacity="0"/></radialGradient>
+<radialGradient id="glow2" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#22D3EE" stop-opacity="0.45"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0"/></radialGradient>
+<pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="2" fill="#fff" fill-opacity="0.12"/></pattern><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4F46E5"/><stop offset="1" stop-color="#06B6D4"/></linearGradient></defs>
+<rect width="1920" height="720" fill="url(#bg)"/><rect width="1920" height="720" fill="url(#dots)"/>
+<circle cx="360" cy="150" r="380" fill="url(#glow1)"/><circle cx="1600" cy="640" r="420" fill="url(#glow2)"/>
+<g fill="none" stroke="#fff" stroke-opacity="0.16" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+<path d="M250 250 L170 330 L250 410"/><path d="M1670 250 L1750 330 L1670 410"/></g>
+<circle cx="1480" cy="150" r="14" fill="#FBBF24" fill-opacity="0.9"/><circle cx="440" cy="600" r="8" fill="#22D3EE"/><circle cx="1330" cy="610" r="6" fill="#fff" fill-opacity="0.6"/>
+<g transform="translate(864 96) scale(0.375)"><rect width="512" height="512" rx="112" fill="url(#g)"/><path d="M150 140 L256 272 L362 140 M256 272 V392" fill="none" stroke="#fff" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="378" cy="384" r="26" fill="#FBBF24"/></g>
+<text x="960" y="430" text-anchor="middle" font-family="Avenir Next" font-weight="700" font-size="150" letter-spacing="4" fill="#fff">Y's Room</text>
+<rect x="900" y="470" width="120" height="6" rx="3" fill="#FBBF24"/>
+<text x="960" y="545" text-anchor="middle" font-family="Avenir Next" font-weight="500" font-size="44" letter-spacing="6" fill="#C7D2FE">WEB ENGINEER / FUKUOKA</text></svg>

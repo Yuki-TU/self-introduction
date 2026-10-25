@@ -23,28 +23,32 @@ const Home: NextPage = () => {
       <Head>
         <title>y&apos;s room</title>
         <meta name="description" content="自己紹介のトップページです。" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
       </Head>
       <Header />
       <main className="flex-1">
-        <div className="hidden sm:inline">
+        <div className="hidden sm:block">
           <Image
-            src="/home.png"
-            alt="logo"
-            className="h-auto w-full object-cover"
+            src="/hero.png"
+            alt="Y's Room"
+            className="h-auto w-full"
             sizes="100vw"
-            height="300"
-            width="800"
+            height="720"
+            width="1920"
+            priority
           />
         </div>
         <div className="sm:hidden">
           <Image
-            src="/home.png"
-            alt="logo"
-            className="object-cover"
+            src="/hero-sp.png"
+            alt="Y's Room"
+            className="h-auto w-full"
             sizes="100vw"
-            height="425"
-            width="440"
+            height="850"
+            width="880"
+            priority
           />
         </div>
         <h1 className="mt-4 text-center text-[40px]">ABOUT</h1>

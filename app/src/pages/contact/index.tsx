@@ -13,7 +13,9 @@ const Home: NextPage = () => {
       <Head>
         <title>y&apos;s room - CONTACT</title>
         <meta name="description" content="自己紹介のCONTACTページです。" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
       </Head>
       <Header />
       <main className="mx-auto w-full flex-1 md:w-[1230px]">
