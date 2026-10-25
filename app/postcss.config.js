@@ -1,7 +1,6 @@
 module.exports = {
   plugins: {
-    tailwindcss: {}, // tailwindCSSの利用プラグイン
-    autoprefixer: {}, // ベンダープレフィックス自動生成プラグイン
+    "@tailwindcss/postcss": {}, // tailwindCSSの利用プラグイン（ベンダープレフィックスも自動付与）
     cssnano: {}, // ビルドファイルを圧縮プラグイン
   },
 };

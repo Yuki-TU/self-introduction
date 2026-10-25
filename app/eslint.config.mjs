@@ -6,7 +6,14 @@ import tailwindcss from "eslint-plugin-tailwindcss";
 const eslintConfig = [
   ...nextCoreWebVitals,
   // class名を整形したりする
-  ...tailwindcss.configs["flat/recommended"],
+  tailwindcss.configs.recommended,
+  {
+    settings: {
+      tailwindcss: {
+        cssConfigPath: "./src/styles/globals.css",
+      },
+    },
+  },
   ...storybook.configs["flat/recommended"],
   // prettierとeslintとの衝突回避
   prettier,
