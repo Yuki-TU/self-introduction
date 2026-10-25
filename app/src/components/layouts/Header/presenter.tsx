@@ -17,11 +17,11 @@ const HeaderComponent = (props: Props) => (
   <header className="mx-auto flex w-full px-[15px] md:w-[1230px] md:py-7">
     <div className="flex-1">
       <Image
-        className="cursor-pointer object-cover"
+        className="cursor-pointer"
         src="/logo.png"
-        alt="logo"
-        width="100"
-        height="55"
+        alt="Y's Room"
+        width="160"
+        height="44"
         onClick={props.onclickHome}
       />
     </div>
