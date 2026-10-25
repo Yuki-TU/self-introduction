@@ -1,4 +1,4 @@
-import router from "next/router";
+import Router from "next/router";
 import { memo } from "react";
 import HeaderComponent from "./presenter";
 
@@ -9,9 +9,9 @@ import HeaderComponent from "./presenter";
 const HeaderContainer = () => {
   return (
     <HeaderComponent
-      onclickHome={() => router.push("/")}
-      onclickBlog={() => router.push("/blog")}
-      onclickContact={() => router.push("/contact")}
+      onclickHome={() => Router.push("/")}
+      onclickBlog={() => Router.push("/blog")}
+      onclickContact={() => Router.push("/contact")}
     />
   );
 };
