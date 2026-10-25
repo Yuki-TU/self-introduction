@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Footer, Header } from "../../components/uniqueParts";
+import Footer from "@/components/layouts/Footer";
+import Header from "@/components/layouts/Header";
 
 /**
  * コンタクトページ

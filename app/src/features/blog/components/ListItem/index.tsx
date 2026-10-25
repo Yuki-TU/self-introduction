@@ -1,6 +1,6 @@
 import Router from "next/router";
 import { memo } from "react";
-import { Content } from "../../../../libs/api/common";
+import type { Content } from "@/types/content";
 
 type Props = Content & {
   /**クリックした際のリンク */

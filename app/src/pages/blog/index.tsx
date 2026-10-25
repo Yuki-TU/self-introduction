@@ -1,9 +1,10 @@
 import Head from "next/head";
-import { client } from "../../../libs/api/client";
-import { Content } from "../../../libs/api/common";
-import { getDate } from "../../../libs/time";
-import { Footer, Header } from "../../components/uniqueParts";
-import { ListItem } from "../../components/uniqueParts/ListItem";
+import Footer from "@/components/layouts/Footer";
+import Header from "@/components/layouts/Header";
+import ListItem from "@/features/blog/components/ListItem";
+import { client } from "@/lib/api/client";
+import type { Content } from "@/types/content";
+import { getDate } from "@/utils/date";
 
 /**
  * ブログ一覧表示ページ

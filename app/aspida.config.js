@@ -1,3 +1,3 @@
 module.exports = {
-  input: "./libs/api", // aspidaのエンtリーディレクトリ指定
+  input: "./src/lib/api", // aspidaのエンtリーディレクトリ指定
 };

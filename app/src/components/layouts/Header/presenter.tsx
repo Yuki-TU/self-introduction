@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { MouseEventHandler } from "react";
-import { Button } from "../../uiParts";
+import Button from "@/components/ui/Button";
 
 type Props = {
   /** ホームボタン・ロゴを押された時の処理 */
