@@ -1,10 +1,21 @@
 import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
 import prettier from "eslint-config-prettier/flat";
-import storybook from "eslint-plugin-storybook";
+import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
+import { importX } from "eslint-plugin-import-x";
+import { configs as storybookConfigs } from "eslint-plugin-storybook";
 import tailwindcss from "eslint-plugin-tailwindcss";
 
 const eslintConfig = [
   ...nextCoreWebVitals,
+  // eslint-plugin-importはESLint 10非対応のため、import系のルールはimport-xを使う
+  importX.flatConfigs.recommended,
+  importX.flatConfigs.typescript,
+  importX.flatConfigs.warnings,
+  {
+    settings: {
+      "import-x/resolver-next": [createTypeScriptImportResolver()],
+    },
+  },
   // class名を整形したりする
   tailwindcss.configs.recommended,
   {
@@ -14,13 +25,13 @@ const eslintConfig = [
       },
     },
   },
-  ...storybook.configs["flat/recommended"],
+  ...storybookConfigs["flat/recommended"],
   // prettierとeslintとの衝突回避
   prettier,
   {
     rules: {
       // import の順番をルール化
-      "import/order": [
+      "import-x/order": [
         "error",
         {
           alphabetize: {
@@ -28,6 +39,8 @@ const eslintConfig = [
           },
         },
       ],
+      // default exportを別名でimportしただけで警告されるため無効化（旧eslint-plugin-importのwarningsには無かったルール）
+      "import-x/no-rename-default": "off",
       "react/display-name": "off",
     },
   },
