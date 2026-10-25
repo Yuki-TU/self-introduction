@@ -1,9 +1,10 @@
 import { GetStaticPropsContext } from "next";
 import Head from "next/head";
-import { client } from "../../../libs/api/client";
-import { Content } from "../../../libs/api/common";
-import { getDate } from "../../../libs/time";
-import { Footer, Header } from "../../components/uniqueParts";
+import Footer from "@/components/layouts/Footer";
+import Header from "@/components/layouts/Header";
+import { client } from "@/lib/api/client";
+import type { Content } from "@/types/content";
+import { getDate } from "@/utils/date";
 
 /**
  * 各種ブログの詳細記事ページ

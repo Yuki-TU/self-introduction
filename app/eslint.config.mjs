@@ -41,6 +41,35 @@ const eslintConfig = [
       ],
       // default exportを別名でimportしただけで警告されるため無効化（旧eslint-plugin-importのwarningsには無かったルール）
       "import-x/no-rename-default": "off",
+      // 依存方向を shared -> features -> pages に制限（bulletproof-react準拠）
+      "import-x/no-restricted-paths": [
+        "error",
+        {
+          zones: [
+            // feature同士のimportを禁止（組み合わせはpagesで行う）
+            {
+              target: "./src/features/blog",
+              from: "./src/features",
+              except: ["./blog"],
+            },
+            // featuresからpagesへのimportを禁止
+            {
+              target: "./src/features",
+              from: "./src/pages",
+            },
+            // 共通モジュールからfeatures・pagesへのimportを禁止
+            {
+              target: [
+                "./src/components",
+                "./src/lib",
+                "./src/types",
+                "./src/utils",
+              ],
+              from: ["./src/features", "./src/pages"],
+            },
+          ],
+        },
+      ],
       "react/display-name": "off",
     },
   },

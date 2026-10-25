@@ -1,8 +1,10 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { Article, Avatar } from "../components/uiParts";
-import { Footer, Header } from "../components/uniqueParts";
+import Footer from "@/components/layouts/Footer";
+import Header from "@/components/layouts/Header";
+import Article from "@/components/ui/Article";
+import Avatar from "@/components/ui/Avatar";
 
 /**
  * トップページ

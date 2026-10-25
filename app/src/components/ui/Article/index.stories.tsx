@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import { Article } from "../";
+import Article from ".";
 
 const meta = {
-  title: "uiParts/Article",
+  title: "ui/Article",
   component: Article,
   parameters: {
     docs: {
