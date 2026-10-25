@@ -14,13 +14,12 @@ type Props = {
  * @returns コンポーネント
  */
 const HeaderComponent = (props: Props) => (
-  <header className="flex px-[15px] mx-auto w-full md:py-7 md:w-[1230px]">
+  <header className="mx-auto flex w-full px-[15px] md:w-[1230px] md:py-7">
     <div className="flex-1">
       <Image
-        className="cursor-pointer"
+        className="cursor-pointer object-cover"
         src="/logo.png"
         alt="logo"
-        objectFit="cover"
         width="100"
         height="55"
         onClick={props.onclickHome}
