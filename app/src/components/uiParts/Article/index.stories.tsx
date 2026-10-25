@@ -1,8 +1,7 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import React from "react";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { Article } from "../";
 
-export default {
+const meta = {
   title: "uiParts/Article",
   component: Article,
   parameters: {
@@ -12,36 +11,37 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof Article>;
+} satisfies Meta<typeof Article>;
 
-const Template: ComponentStory<typeof Article> = (args) => (
-  <Article {...args} />
-);
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-export const Primary = Template.bind({});
-Primary.args = {
-  title: "タイトル",
-  text: "テキスト",
-};
-Primary.parameters = {
-  docs: {
-    description: {
-      story: "必須パラメータのみ指定",
+// More on args: https://storybook.js.org/docs/writing-stories/args
+export const Primary: Story = {
+  args: {
+    title: "タイトル",
+    text: "テキスト",
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: "必須パラメータのみ指定",
+      },
     },
   },
 };
 
-export const FixWidth = Template.bind({});
-FixWidth.args = {
-  title: "タイトル",
-  text: "テキスト",
-  className: "w-[300px]",
-};
-FixWidth.parameters = {
-  docs: {
-    description: {
-      story: "固定幅300pxにした場合のコンポーネント",
+export const FixWidth: Story = {
+  args: {
+    title: "タイトル",
+    text: "テキスト",
+    className: "w-[300px]",
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: "固定幅300pxにした場合のコンポーネント",
+      },
     },
   },
 };

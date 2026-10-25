@@ -6,14 +6,22 @@ describe("Headerコンポーネントはヘッダー部分の共通コンポー�
   describe("ヘッダーには各種メニューがある", () => {
     test("メニューの1つに、HOMEがあり、その文字列が存在する", () => {
       const { getByText } = render(
-        <HeaderComponent onclickHome={jest.fn()} onclickAbout={jest.fn()} />
+        <HeaderComponent
+          onclickHome={jest.fn()}
+          onclickBlog={jest.fn()}
+          onclickContact={jest.fn()}
+        />
       );
       expect(getByText("HOME")).toBeTruthy();
     });
     test("HOMEを押すとonclickHomeが呼ばれる", async () => {
       const onClickMock = jest.fn();
       render(
-        <HeaderComponent onclickHome={onClickMock} onclickAbout={jest.fn()} />
+        <HeaderComponent
+          onclickHome={onClickMock}
+          onclickBlog={jest.fn()}
+          onclickContact={jest.fn()}
+        />
       );
 
       // クリック

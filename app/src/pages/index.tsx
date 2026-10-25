@@ -29,9 +29,8 @@ const Home: NextPage = () => {
           <Image
             src="/home.png"
             alt="logo"
-            objectFit="cover"
+            className="h-auto w-full object-cover"
             sizes="100vw"
-            layout="responsive"
             height="300"
             width="800"
           />
@@ -40,16 +39,16 @@ const Home: NextPage = () => {
           <Image
             src="/home.png"
             alt="logo"
-            objectFit="cover"
+            className="object-cover"
             sizes="100vw"
             height="425"
             width="440"
           />
         </div>
-        <h1 className="mt-4 text-[40px] text-center">ABOUT</h1>
-        <div className="flex flex-col px-3 md:flex-row md:mx-0">
+        <h1 className="mt-4 text-center text-[40px]">ABOUT</h1>
+        <div className="flex flex-col px-3 md:mx-0 md:flex-row">
           <Avatar
-            className="flex-1 my-8 mx-auto md:pl-20 "
+            className="mx-auto my-8 flex-1 md:pl-20 "
             src="/avatar.jpg"
             alt=""
             height={400}

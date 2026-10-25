@@ -1,9 +1,20 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* リセットCSS（tailwindのpreflightより優先度を下げるため最下位のレイヤーに置く） */
+@import "./normalize.css" layer(normalize);
+@import "tailwindcss";
 
-/* リセットCSX */
-@import url("normalize.css");
+/*
+  Tailwind CSS v4 でデフォルトのborder色がcurrentcolorに変わったため、
+  v3と同じ見た目になるように互換スタイルを追加
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 html,
 body {

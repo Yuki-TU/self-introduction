@@ -20,10 +20,9 @@ type Props = ComponentProps<"div"> & {
 const AvatarComponent = (props: Props) => (
   <div className={props.className}>
     <Image
-      className="rounded-[50%]"
+      className="rounded-[50%] object-cover"
       src={props.src}
       alt={props.alt}
-      objectFit="cover"
       height={props.height}
       width={props.width}
     />

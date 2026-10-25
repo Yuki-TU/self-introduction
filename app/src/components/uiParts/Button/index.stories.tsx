@@ -1,10 +1,9 @@
-import { action } from "@storybook/addon-actions";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import React from "react";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import { fn } from "storybook/test";
 import { Button } from "../";
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
+// More on default export: https://storybook.js.org/docs/writing-stories#default-export
+const meta = {
   title: "uiParts/Button",
   component: Button,
   parameters: {
@@ -14,21 +13,22 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof Button>;
+} satisfies Meta<typeof Button>;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-export const Primary = Template.bind({});
-Primary.args = {
-  label: "ボタン",
-  onClick: action("click"),
-};
-Primary.parameters = {
-  docs: {
-    description: {
-      story: "Some story **markdown**",
+// More on args: https://storybook.js.org/docs/writing-stories/args
+export const Primary: Story = {
+  args: {
+    label: "ボタン",
+    onClick: fn(),
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: "Some story **markdown**",
+      },
     },
   },
 };

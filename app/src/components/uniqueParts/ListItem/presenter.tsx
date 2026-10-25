@@ -1,5 +1,5 @@
-import router from "next/router";
-import React from "react";
+import Router from "next/router";
+import { memo } from "react";
 import { Content } from "../../../../libs/api/common";
 
 type Props = Content & {
@@ -15,14 +15,14 @@ type Props = Content & {
  * @param props.content コンテンツ
  * @param props.href リリックした際のリンク
  */
-const ListItem = React.memo((props: Props) => (
+const ListItem = memo((props: Props) => (
   <div
-    className="py-2 shadow-md cursor-pointer"
-    onClick={() => router.push(props.href)}
+    className="cursor-pointer py-2 shadow-md"
+    onClick={() => Router.push(props.href)}
   >
     <div className="p-4">
       <h3
-        className="overflow-hidden mb-1 text-lg font-bold text-ellipsis whitespace-nowrap"
+        className="mb-1 truncate text-lg font-bold"
         title={props.title}
       >
         {props.title}

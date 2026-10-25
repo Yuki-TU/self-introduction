@@ -12,15 +12,15 @@ import { ListItem } from "../../components/uniqueParts/ListItem";
  */
 export default function Home({ blogs }: { blogs: Content[] }) {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex min-h-screen flex-col">
       <Head>
         <title>y&apos;s room</title>
         <meta name="description" content="自己紹介のトップページです。" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className="flex-1 mx-auto w-full md:w-[1230px]">
-        <h1 className="text-[40px] text-center">BLOG</h1>
+      <main className="mx-auto w-full flex-1 md:w-[1230px]">
+        <h1 className="text-center text-[40px]">BLOG</h1>
         <ul>
           {blogs.map((blog) => (
             <li key={blog.id} className="mx-2">
