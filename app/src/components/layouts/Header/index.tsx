@@ -1,4 +1,6 @@
-import Router from "next/router";
+"use client";
+
+import { useRouter } from "next/navigation";
 import { memo } from "react";
 import HeaderComponent from "./presenter";
 
@@ -7,11 +9,13 @@ import HeaderComponent from "./presenter";
  * @returns ヘッダーコンポーネント
  */
 const HeaderContainer = () => {
+  const router = useRouter();
+
   return (
     <HeaderComponent
-      onclickHome={() => Router.push("/")}
-      onclickBlog={() => Router.push("/blog")}
-      onclickContact={() => Router.push("/contact")}
+      onclickHome={() => router.push("/")}
+      onclickBlog={() => router.push("/blog")}
+      onclickContact={() => router.push("/contact")}
     />
   );
 };
