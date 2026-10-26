@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { describe, expect, test, vi } from "vitest";
 import HeaderComponent from "./presenter";
 
 describe("Headerコンポーネントはヘッダー部分の共通コンポーネント", () => {
@@ -7,21 +8,21 @@ describe("Headerコンポーネントはヘッダー部分の共通コンポー�
     test("メニューの1つに、HOMEがあり、その文字列が存在する", () => {
       const { getByText } = render(
         <HeaderComponent
-          onclickHome={jest.fn()}
-          onclickBlog={jest.fn()}
-          onclickContact={jest.fn()}
-        />
+          onclickHome={vi.fn()}
+          onclickBlog={vi.fn()}
+          onclickContact={vi.fn()}
+        />,
       );
       expect(getByText("HOME")).toBeTruthy();
     });
     test("HOMEを押すとonclickHomeが呼ばれる", async () => {
-      const onClickMock = jest.fn();
+      const onClickMock = vi.fn();
       render(
         <HeaderComponent
           onclickHome={onClickMock}
-          onclickBlog={jest.fn()}
-          onclickContact={jest.fn()}
-        />
+          onclickBlog={vi.fn()}
+          onclickContact={vi.fn()}
+        />,
       );
 
       // クリック
