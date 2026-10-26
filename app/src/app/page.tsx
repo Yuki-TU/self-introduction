@@ -1,5 +1,3 @@
-import type { NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
 import Footer from "@/components/layouts/Footer";
 import Header from "@/components/layouts/Header";
@@ -10,7 +8,7 @@ import Avatar from "@/components/ui/Avatar";
  * トップページ
  * @returns コンポーネント
  */
-const Home: NextPage = () => {
+export default function Home() {
   const profile =
     "初めまして、@Yuki-TUです。福岡でWebエンジニアをしております。主に、動画関連の会社でフロントエンド周りの開発をやっております。趣味は、キャンプ、ネットサーフィンです。最近は、可読性、汎用性、保守性のある設計・書き方を考えながらソースコードを書くようにしています。";
   const skill =
@@ -20,13 +18,6 @@ const Home: NextPage = () => {
 
   return (
     <div className="flex flex-col">
-      <Head>
-        <title>y&apos;s room</title>
-        <meta name="description" content="自己紹介のトップページです。" />
-        <link rel="icon" href="/favicon.ico" sizes="48x48" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-icon.png" />
-      </Head>
       <Header />
       <main className="flex-1">
         <div className="hidden sm:block">
@@ -70,6 +61,4 @@ const Home: NextPage = () => {
       <Footer />
     </div>
   );
-};
-
-export default Home;
+}

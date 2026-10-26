@@ -65,7 +65,7 @@ $ yarn storybook
 
 ```
 src
-+-- pages        # ルーティング（アプリケーション層）。薄く保ち、featuresや共通部品を組み合わせる
++-- app          # App Routerのルーティング（アプリケーション層）。薄く保ち、featuresや共通部品を組み合わせる
 +-- components   # 共通コンポーネント
 |   +-- ui       # 汎用UI（Button, Article, Avatar）
 |   +-- layouts  # レイアウト（Header, Footer）
@@ -78,6 +78,6 @@ src
 
 - バレルファイル（`index.ts`）は使わず、直接importします。
 - `@/*` は `src/*` のエイリアスです。
-- 依存方向は `components / lib / types / utils` → `features` → `pages` の一方向です。逆方向のimportやfeature同士のimportはESLint（`import-x/no-restricted-paths`）でエラーになります。
+- 依存方向は `components / lib / types / utils` → `features` → `app` の一方向です。逆方向のimportやfeature同士のimportはESLint（`import-x/no-restricted-paths`）でエラーになります。
 - 新しいfeatureを追加したら、`eslint.config.mjs` の `no-restricted-paths` にfeature間importの禁止ルールを追加してください。
 - aspidaの定義は `src/lib/api` にあり、`yarn api:build` で `$api.ts` を再生成します。

@@ -41,23 +41,23 @@ const eslintConfig = [
       ],
       // default exportを別名でimportしただけで警告されるため無効化（旧eslint-plugin-importのwarningsには無かったルール）
       "import-x/no-rename-default": "off",
-      // 依存方向を shared -> features -> pages に制限（bulletproof-react準拠）
+      // 依存方向を shared -> features -> app に制限（bulletproof-react準拠）
       "import-x/no-restricted-paths": [
         "error",
         {
           zones: [
-            // feature同士のimportを禁止（組み合わせはpagesで行う）
+            // feature同士のimportを禁止（組み合わせはappで行う）
             {
               target: "./src/features/blog",
               from: "./src/features",
               except: ["./blog"],
             },
-            // featuresからpagesへのimportを禁止
+            // featuresからappへのimportを禁止
             {
               target: "./src/features",
-              from: "./src/pages",
+              from: "./src/app",
             },
-            // 共通モジュールからfeatures・pagesへのimportを禁止
+            // 共通モジュールからfeatures・appへのimportを禁止
             {
               target: [
                 "./src/components",
@@ -65,7 +65,7 @@ const eslintConfig = [
                 "./src/types",
                 "./src/utils",
               ],
-              from: ["./src/features", "./src/pages"],
+              from: ["./src/features", "./src/app"],
             },
           ],
         },
