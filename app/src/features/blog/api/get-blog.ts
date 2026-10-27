@@ -1,11 +1,27 @@
-import { cache } from 'react';
+import { queryOptions, useQuery } from '@tanstack/react-query';
 
 import { client } from '@/lib/api-client';
+import { QueryConfig } from '@/lib/react-query';
 
-/**
- * ブログ詳細を取得
- * 同一リクエスト内でページとメタデータが同じ記事を取得するためキャッシュする
- * @param id ブログのid
- * @returns ブログ詳細
- */
-export const getBlog = cache((id: string) => client.blogs._id(id).$get());
+export const getBlog = ({ blogId }: { blogId: string }) => {
+  return client.blogs._id(blogId).$get();
+};
+
+export const getBlogQueryOptions = (blogId: string) => {
+  return queryOptions({
+    queryKey: ['blogs', blogId],
+    queryFn: () => getBlog({ blogId }),
+  });
+};
+
+type UseBlogOptions = {
+  blogId: string;
+  queryConfig?: QueryConfig<typeof getBlogQueryOptions>;
+};
+
+export const useBlog = ({ blogId, queryConfig }: UseBlogOptions) => {
+  return useQuery({
+    ...getBlogQueryOptions(blogId),
+    ...queryConfig,
+  });
+};

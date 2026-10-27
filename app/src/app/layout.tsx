@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import { ReactNode } from 'react';
+
+import { AppProvider } from '@/app/provider';
+
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
@@ -23,7 +26,9 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="ja">
       <body>
-        <div className="mx-auto w-full md:w-[1230px]">{children}</div>
+        <AppProvider>
+          <div className="mx-auto w-full md:w-[1230px]">{children}</div>
+        </AppProvider>
       </body>
     </html>
   );

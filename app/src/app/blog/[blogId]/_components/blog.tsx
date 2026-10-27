@@ -1,19 +1,14 @@
 import { BlogView } from '@/features/blog/components/blog-view';
-import type { Content } from '@/types/api';
-
-type BlogProps = {
-  blog: Content;
-};
 
 /**
  * ブログ詳細の表示内容
- * @param props.blog ブログ詳細
+ * @param props.blogId ブログのid
  * @returns コンポーネント
  */
-export const Blog = ({ blog }: BlogProps) => {
+export const Blog = ({ blogId }: { blogId: string }) => {
   return (
     <main className="flex-1 px-3">
-      <BlogView blog={blog} />
+      <BlogView blogId={blogId} />
     </main>
   );
 };

@@ -113,6 +113,8 @@ const eslintConfig = [
   },
   {
     ignores: [
+      "generators/**",
+      "plopfile.cjs",
       // aspidaの自動生成ファイル
       "src/lib/api/$api.ts",
       ".next/**",
