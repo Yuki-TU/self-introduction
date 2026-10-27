@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
-import { ReactNode } from "react";
-import "@/styles/globals.css";
+import type { Metadata } from 'next';
+import { ReactNode } from 'react';
+import '@/styles/globals.css';
 
 export const metadata: Metadata = {
   title: "y's room",
-  description: "自己紹介のトップページです。",
+  description: '自己紹介のトップページです。',
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "48x48" },
-      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: '/favicon.ico', sizes: '48x48' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
     ],
-    apple: "/apple-icon.png",
+    apple: '/apple-icon.png',
   },
 };
 

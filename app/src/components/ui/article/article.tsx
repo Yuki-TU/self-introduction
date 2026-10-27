@@ -1,4 +1,4 @@
-import { clsx } from "clsx";
+import { cn } from '@/utils/cn';
 
 export type ArticleProps = {
   className?: string;
@@ -14,7 +14,7 @@ export type ArticleProps = {
  * @returns コンポーネント
  */
 const Article = (props: ArticleProps) => (
-  <section className={clsx(props.className, "my-12")}>
+  <section className={cn(props.className, 'my-12')}>
     <h1 className="text-2xl">{props.title}</h1>
     <div className="border-2 border-y-black"></div>
     <p className="mt-5">{props.text}</p>

@@ -1,38 +1,42 @@
-"use client";
+import Image from 'next/image';
 
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-
-import { Button } from "@/components/ui/button";
-import { paths } from "@/config/paths";
+import { Button } from '@/components/ui/button';
+import { Link } from '@/components/ui/link';
+import { paths } from '@/config/paths';
 
 /**
  * ヘッダーコンポーネント
  * @returns コンポーネント
  */
 export const Header = () => {
-  const router = useRouter();
-
-  const onClickHome = () => router.push(paths.home.getHref());
-
   return (
     <header className="mx-auto flex w-full px-[15px] md:w-[1230px] md:py-7">
       <div className="flex-1">
-        <Image
-          className="cursor-pointer"
-          src="/logo.png"
-          alt="Y's Room"
-          width="160"
-          height="44"
-          onClick={onClickHome}
-        />
+        <Link
+          className="inline-block text-inherit hover:text-inherit"
+          href={paths.home.getHref()}
+        >
+          <Image src="/logo.png" alt="Y's Room" width="160" height="44" />
+        </Link>
       </div>
-      <Button onClick={onClickHome} label="HOME" />
-      <Button onClick={() => router.push(paths.blogs.getHref())} label="BLOG" />
-      <Button
-        onClick={() => router.push(paths.contact.getHref())}
-        label="CONTACT"
-      />
+      <Link
+        className="text-inherit hover:text-inherit"
+        href={paths.home.getHref()}
+      >
+        <Button label="HOME" />
+      </Link>
+      <Link
+        className="text-inherit hover:text-inherit"
+        href={paths.blogs.getHref()}
+      >
+        <Button label="BLOG" />
+      </Link>
+      <Link
+        className="text-inherit hover:text-inherit"
+        href={paths.contact.getHref()}
+      >
+        <Button label="CONTACT" />
+      </Link>
     </header>
   );
 };

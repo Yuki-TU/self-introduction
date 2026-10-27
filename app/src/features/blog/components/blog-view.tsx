@@ -1,5 +1,5 @@
-import type { Content } from "@/types/api";
-import { formatDate } from "@/utils/format";
+import type { Content } from '@/types/api';
+import { formatDate } from '@/utils/format';
 
 type BlogViewProps = {
   blog: Content;

@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
-import { getBlog } from "@/features/blog/api/get-blog";
-import { getBlogs } from "@/features/blog/api/get-blogs";
+import { getBlog } from '@/features/blog/api/get-blog';
+import { getBlogs } from '@/features/blog/api/get-blogs';
 
-import { Blog } from "./_components/blog";
+import { Blog } from './_components/blog';
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `y's room - ${blog.title}`,
-    description: "自己紹介のトップページです。",
+    description: '自己紹介のトップページです。',
   };
 }
 

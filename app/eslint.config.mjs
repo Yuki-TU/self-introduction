@@ -80,6 +80,9 @@ const eslintConfig = [
           ],
         },
       ],
+      // 循環依存を禁止
+      "import-x/no-cycle": "error",
+      "linebreak-style": ["error", "unix"],
       "react/display-name": "off",
     },
   },

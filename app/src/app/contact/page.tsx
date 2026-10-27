@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
-import { Contact } from "./_components/contact";
+import { Contact } from './_components/contact';
 
 export const metadata: Metadata = {
   title: "y's room - CONTACT",
-  description: "自己紹介のCONTACTページです。",
+  description: '自己紹介のCONTACTページです。',
 };
 
 /**

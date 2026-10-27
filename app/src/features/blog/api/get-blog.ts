@@ -1,6 +1,6 @@
-import { cache } from "react";
+import { cache } from 'react';
 
-import { client } from "@/lib/api-client";
+import { client } from '@/lib/api-client';
 
 /**
  * ブログ詳細を取得

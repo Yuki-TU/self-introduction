@@ -1,8 +1,8 @@
-import { paths } from "@/config/paths";
-import type { Content } from "@/types/api";
-import { formatDate } from "@/utils/format";
+import { paths } from '@/config/paths';
+import type { Content } from '@/types/api';
+import { formatDate } from '@/utils/format';
 
-import { BlogListItem } from "./blog-list-item";
+import { BlogListItem } from './blog-list-item';
 
 type BlogListProps = {
   blogs: Content[];

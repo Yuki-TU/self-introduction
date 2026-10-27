@@ -1,12 +1,12 @@
-import aspida from "@aspida/fetch";
+import aspida from '@aspida/fetch';
 
-import api from "./api/$api";
+import api from './api/$api';
 
 const fetchConfig = {
   headers: {
-    "X-MICROCMS-API-KEY": process.env.API_KEY!,
+    'X-MICROCMS-API-KEY': process.env.API_KEY!,
   },
-  baseURL: "https://nerusan.microcms.io/api/v1",
+  baseURL: 'https://nerusan.microcms.io/api/v1',
 };
 
 // apiクライアント

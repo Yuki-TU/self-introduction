@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
-import { PageLayout } from "@/components/layouts/page-layout";
+import { PageLayout } from '@/components/layouts/page-layout';
 
 const BlogLayout = ({ children }: { children: ReactNode }) => {
   return <PageLayout>{children}</PageLayout>;

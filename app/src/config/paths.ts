@@ -1,14 +1,14 @@
 export const paths = {
   home: {
-    getHref: () => "/",
+    getHref: () => '/',
   },
   blogs: {
-    getHref: () => "/blog",
+    getHref: () => '/blog',
   },
   blog: {
     getHref: (id: string) => `/blog/${id}`,
   },
   contact: {
-    getHref: () => "/contact",
+    getHref: () => '/contact',
   },
 } as const;

@@ -1,5 +1,5 @@
-import { BlogList } from "@/features/blog/components/blog-list";
-import type { Content } from "@/types/api";
+import { BlogList } from '@/features/blog/components/blog-list';
+import type { Content } from '@/types/api';
 
 type BlogsProps = {
   blogs: Content[];

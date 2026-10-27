@@ -1,31 +1,29 @@
-import { render, screen, userEvent } from "@/testing/test-utils";
+import { rtlRender, screen } from '@/testing/test-utils';
 
-import { Header } from "../header";
+import { Header } from '../header';
 
-const push = vi.fn();
-
-vi.mock("next/navigation", () => ({
-  useRouter: () => ({ push }),
-}));
-
-describe("Headerコンポーネントはヘッダー部分の共通コンポーネント", () => {
-  beforeEach(() => {
-    push.mockClear();
-  });
-
-  describe("ヘッダーには各種メニューがある", () => {
-    test("メニューの1つに、HOMEがあり、その文字列が存在する", () => {
-      render(<Header />);
-      expect(screen.getByText("HOME")).toBeTruthy();
+describe('Headerコンポーネントはヘッダー部分の共通コンポーネント', () => {
+  describe('ヘッダーには各種メニューがある', () => {
+    test('メニューの1つに、HOMEがあり、その文字列が存在する', () => {
+      rtlRender(<Header />);
+      expect(screen.getByText('HOME')).toBeTruthy();
     });
 
-    test("HOMEを押すとトップページへ遷移する", async () => {
-      render(<Header />);
+    test('各メニューは対応するページへのリンクになっている', () => {
+      rtlRender(<Header />);
 
-      await userEvent.click(screen.getByText("HOME"));
-
-      expect(push).toHaveBeenCalledTimes(1);
-      expect(push).toHaveBeenCalledWith("/");
+      expect(screen.getByRole('link', { name: 'HOME' })).toHaveAttribute(
+        'href',
+        '/',
+      );
+      expect(screen.getByRole('link', { name: 'BLOG' })).toHaveAttribute(
+        'href',
+        '/blog',
+      );
+      expect(screen.getByRole('link', { name: 'CONTACT' })).toHaveAttribute(
+        'href',
+        '/contact',
+      );
     });
   });
 });

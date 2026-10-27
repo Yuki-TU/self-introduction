@@ -1,7 +1,7 @@
-import Image from "next/image";
-import { ComponentProps } from "react";
+import Image from 'next/image';
+import { ComponentProps } from 'react';
 
-export type AvatarProps = ComponentProps<"div"> & {
+export type AvatarProps = ComponentProps<'div'> & {
   /** 画像 */
   src: string;
   /** 代替文字 */

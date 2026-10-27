@@ -1,9 +1,9 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-import { Footer } from "@/components/layouts/footer";
-import { Header } from "@/components/layouts/header";
-import { Article } from "@/components/ui/article";
-import { Avatar } from "@/components/ui/avatar";
+import { Footer } from '@/components/layouts/footer';
+import { Header } from '@/components/layouts/header';
+import { Article } from '@/components/ui/article';
+import { Avatar } from '@/components/ui/avatar';
 
 /**
  * トップページ
@@ -11,11 +11,11 @@ import { Avatar } from "@/components/ui/avatar";
  */
 const HomePage = () => {
   const profile =
-    "初めまして、@Yuki-TUです。福岡でWebエンジニアをしております。主に、動画関連の会社でフロントエンド周りの開発をやっております。趣味は、キャンプ、ネットサーフィンです。最近は、可読性、汎用性、保守性のある設計・書き方を考えながらソースコードを書くようにしています。";
+    '初めまして、@Yuki-TUです。福岡でWebエンジニアをしております。主に、動画関連の会社でフロントエンド周りの開発をやっております。趣味は、キャンプ、ネットサーフィンです。最近は、可読性、汎用性、保守性のある設計・書き方を考えながらソースコードを書くようにしています。';
   const skill =
-    "TypeScript, JavaScript, C, React, Nextjs, Redux, HTML, CSS, Sass, Docker, JEST";
+    'TypeScript, JavaScript, C, React, Nextjs, Redux, HTML, CSS, Sass, Docker, JEST';
   const career =
-    "大学時代は、IT会社でVue.jsによるアプリの開発を経験。新卒で組み込み系の開発経験を経て、現在は、動画を扱う会社で主にReactアプリケーション開発に従事。動画配信技術の基礎を学びつつ、Web開発の基本を学びました。主に、書籍をベースにより良いコードの書き方、プログラミングをする上に注意すべきことを学びました。また、コードレビューの導入、ドキュメントのテンプレート化、アジャイルスクラムを一部導入した開発の提案・推進をしてきました。";
+    '大学時代は、IT会社でVue.jsによるアプリの開発を経験。新卒で組み込み系の開発経験を経て、現在は、動画を扱う会社で主にReactアプリケーション開発に従事。動画配信技術の基礎を学びつつ、Web開発の基本を学びました。主に、書籍をベースにより良いコードの書き方、プログラミングをする上に注意すべきことを学びました。また、コードレビューの導入、ドキュメントのテンプレート化、アジャイルスクラムを一部導入した開発の提案・推進をしてきました。';
 
   return (
     <div className="flex flex-col">

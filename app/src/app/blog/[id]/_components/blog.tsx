@@ -1,5 +1,5 @@
-import { BlogView } from "@/features/blog/components/blog-view";
-import type { Content } from "@/types/api";
+import { BlogView } from '@/features/blog/components/blog-view';
+import type { Content } from '@/types/api';
 
 type BlogProps = {
   blog: Content;
