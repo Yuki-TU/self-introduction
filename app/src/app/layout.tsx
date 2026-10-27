@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ReactNode } from "react";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
@@ -18,11 +19,7 @@ export const metadata: Metadata = {
  * @param props.children 各ページ
  * @returns コンポーネント
  */
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="ja">
       <body>
@@ -30,4 +27,6 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

@@ -1,4 +1,5 @@
 import { fileURLToPath } from "node:url";
+
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vitest/config";
 
@@ -10,8 +11,12 @@ export default defineConfig({
     },
   },
   test: {
+    globals: true,
     environment: "jsdom",
-    setupFiles: ["./vitest.setup.ts"],
-    include: ["src/**/*.test.{ts,tsx}"],
+    setupFiles: "./src/testing/setup-tests.ts",
+    exclude: ["**/node_modules/**", "**/e2e/**"],
+    coverage: {
+      include: ["src/**"],
+    },
   },
 });

@@ -1,5 +1,6 @@
 import { MicroCMSObjectContent, MicroCMSQueries } from "microcms-js-sdk";
-import type { Content } from "@/types/content";
+
+import type { Content } from "@/types/api";
 
 export type Methods = {
   get: {

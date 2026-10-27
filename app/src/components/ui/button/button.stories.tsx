@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { fn } from "storybook/test";
-import Button from ".";
+
+import { Button } from "./button";
 
 // More on default export: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: "ui/Button",
   component: Button,
   parameters: {
     docs: {

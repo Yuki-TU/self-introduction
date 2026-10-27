@@ -1,10 +1,10 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { memo } from "react";
-import type { Content } from "@/types/content";
 
-type Props = Content & {
+import type { Content } from "@/types/api";
+
+type BlogListItemProps = Content & {
   /**クリックした際のリンク */
   href: string;
 };
@@ -17,7 +17,7 @@ type Props = Content & {
  * @param props.content コンテンツ
  * @param props.href リリックした際のリンク
  */
-const ListItem = memo((props: Props) => {
+export const BlogListItem = (props: BlogListItemProps) => {
   const router = useRouter();
 
   return (
@@ -33,6 +33,4 @@ const ListItem = memo((props: Props) => {
       </div>
     </div>
   );
-});
-
-export default ListItem;
+};

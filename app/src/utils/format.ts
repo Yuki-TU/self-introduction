@@ -11,5 +11,5 @@ dayjs.tz.setDefault("Asia/Tokyo");
  * @param time UTC系資金時間
  * @returns YYYY-MM-DDの文字列
  */
-export const getDate = (time: string | undefined) =>
+export const formatDate = (time: string | undefined) =>
   dayjs.utc(time).tz().format("YYYY-MM-DD");

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import Footer from "@/components/layouts/Footer";
-import Header from "@/components/layouts/Header";
+
+import { Footer } from "@/components/layouts/footer";
+import { Header } from "@/components/layouts/header";
 
 export const metadata: Metadata = {
   title: "y's room - CONTACT",
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
  * コンタクトページ
  * @returns コンポーネント
  */
-export default function Contact() {
+const ContactPage = () => {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
@@ -51,4 +52,6 @@ export default function Contact() {
       <Footer />
     </div>
   );
-}
+};
+
+export default ContactPage;

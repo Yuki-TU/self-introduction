@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ComponentProps } from "react";
 
-type Props = ComponentProps<"div"> & {
+export type AvatarProps = ComponentProps<"div"> & {
   /** 画像 */
   src: string;
   /** 代替文字 */
@@ -17,7 +17,7 @@ type Props = ComponentProps<"div"> & {
  * @param props src, alt, height, width
  * @returns コンポーネント
  */
-const AvatarComponent = (props: Props) => (
+const Avatar = (props: AvatarProps) => (
   <div className={props.className}>
     <Image
       className="rounded-[50%] object-cover"
@@ -29,4 +29,4 @@ const AvatarComponent = (props: Props) => (
   </div>
 );
 
-export default AvatarComponent;
+export { Avatar };

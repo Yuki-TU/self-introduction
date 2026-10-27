@@ -1,7 +1,7 @@
 import { clsx } from "clsx";
-import React from "react";
+import * as React from "react";
 
-type Props = React.ComponentProps<"button"> & {
+export type ButtonProps = React.ComponentProps<"button"> & {
   /** ラベル */
   label?: string;
 };
@@ -11,7 +11,7 @@ type Props = React.ComponentProps<"button"> & {
  * @param param0 buttonタグに準ずる
  * @returns コンポーネント
  */
-const ButtonComponent = ({ className, ...props }: Props) => (
+const Button = ({ className, ...props }: ButtonProps) => (
   <button
     {...props}
     // eslint-plugin-tailwindcssが変数名classNameをクラス名と誤検知するため無効化
@@ -22,4 +22,4 @@ const ButtonComponent = ({ className, ...props }: Props) => (
   </button>
 );
 
-export default ButtonComponent;
+export { Button };

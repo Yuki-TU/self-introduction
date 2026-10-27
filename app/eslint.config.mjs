@@ -1,6 +1,7 @@
 import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
 import prettier from "eslint-config-prettier/flat";
 import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
+import checkFile from "eslint-plugin-check-file";
 import { importX } from "eslint-plugin-import-x";
 import { configs as storybookConfigs } from "eslint-plugin-storybook";
 import tailwindcss from "eslint-plugin-tailwindcss";
@@ -34,9 +35,17 @@ const eslintConfig = [
       "import-x/order": [
         "error",
         {
-          alphabetize: {
-            order: "asc",
-          },
+          groups: [
+            "builtin",
+            "external",
+            "internal",
+            "parent",
+            "sibling",
+            "index",
+            "object",
+          ],
+          "newlines-between": "always",
+          alphabetize: { order: "asc", caseInsensitive: true },
         },
       ],
       // default exportを別名でimportしただけで警告されるため無効化（旧eslint-plugin-importのwarningsには無かったルール）
@@ -61,6 +70,7 @@ const eslintConfig = [
             {
               target: [
                 "./src/components",
+                "./src/hooks",
                 "./src/lib",
                 "./src/types",
                 "./src/utils",
@@ -73,8 +83,35 @@ const eslintConfig = [
       "react/display-name": "off",
     },
   },
+  // ファイル名・フォルダ名をkebab-caseに統一（bulletproof-react準拠）
+  {
+    files: ["src/**/*"],
+    // aspidaの規約（_id@string, $api.ts）に従う必要があるため除外
+    ignores: ["src/lib/api/**"],
+    plugins: { "check-file": checkFile },
+    rules: {
+      "check-file/filename-naming-convention": [
+        "error",
+        {
+          "**/*.{ts,tsx}": "KEBAB_CASE",
+        },
+        {
+          ignoreMiddleExtensions: true,
+        },
+      ],
+      "check-file/folder-naming-convention": [
+        "error",
+        {
+          "!(src/app)/**/*": "KEBAB_CASE",
+          "!(**/__tests__)/**/*": "KEBAB_CASE",
+        },
+      ],
+    },
+  },
   {
     ignores: [
+      // aspidaの自動生成ファイル
+      "src/lib/api/$api.ts",
       ".next/**",
       "out/**",
       "build/**",

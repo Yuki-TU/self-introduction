@@ -1,14 +1,15 @@
 import Image from "next/image";
-import Footer from "@/components/layouts/Footer";
-import Header from "@/components/layouts/Header";
-import Article from "@/components/ui/Article";
-import Avatar from "@/components/ui/Avatar";
+
+import { Footer } from "@/components/layouts/footer";
+import { Header } from "@/components/layouts/header";
+import { Article } from "@/components/ui/article";
+import { Avatar } from "@/components/ui/avatar";
 
 /**
  * トップページ
  * @returns コンポーネント
  */
-export default function Home() {
+const HomePage = () => {
   const profile =
     "初めまして、@Yuki-TUです。福岡でWebエンジニアをしております。主に、動画関連の会社でフロントエンド周りの開発をやっております。趣味は、キャンプ、ネットサーフィンです。最近は、可読性、汎用性、保守性のある設計・書き方を考えながらソースコードを書くようにしています。";
   const skill =
@@ -61,4 +62,6 @@ export default function Home() {
       <Footer />
     </div>
   );
-}
+};
+
+export default HomePage;

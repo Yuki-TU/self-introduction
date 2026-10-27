@@ -1,7 +1,6 @@
 import { clsx } from "clsx";
-import React from "react";
 
-type Props = {
+export type ArticleProps = {
   className?: string;
   /** 記事のタイトル */
   title: string;
@@ -14,7 +13,7 @@ type Props = {
  * @param props title, text, className?
  * @returns コンポーネント
  */
-const ArticleComponent = (props: Props) => (
+const Article = (props: ArticleProps) => (
   <section className={clsx(props.className, "my-12")}>
     <h1 className="text-2xl">{props.title}</h1>
     <div className="border-2 border-y-black"></div>
@@ -22,4 +21,4 @@ const ArticleComponent = (props: Props) => (
   </section>
 );
 
-export default ArticleComponent;
+export { Article };
