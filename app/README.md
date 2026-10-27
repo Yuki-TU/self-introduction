@@ -51,6 +51,27 @@ $ yarn start
 
 その前に`yarn build`を実行する必要がある
 
+- テスト（Vitest + Testing Library）
+
+```sh
+# ウォッチモード
+$ yarn test
+# 1回だけ実行
+$ yarn test:run
+```
+
+テストファイルは対象コンポーネントの隣に `*.test.tsx` として置きます。
+
+- E2E テスト（Playwright）
+
+```sh
+# 初回のみ、ブラウザをインストール
+$ npx playwright install chromium
+$ yarn test:e2e
+```
+
+`e2e/` 配下にテストがあります。開発サーバー（ポート 3100）は自動で起動し、microCMS へのリクエストは `e2e/mock-microcms.cjs` でダミーデータに置き換えます。
+
 - storybook 起動
 
 ```sh
