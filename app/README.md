@@ -1,4 +1,4 @@
-# コンテナ内の環境
+# 開発環境
 
 - 環境構築
   - [create-next-app](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
@@ -12,7 +12,7 @@
 # 開発手順
 
 - 利用環境
-  - node 16.14.2
+  - node 24（[mise](https://mise.jdx.dev/) で管理。ルートの `mise.toml` を参照）
 - ローカルサーバ起動
 
 ```sh
@@ -47,7 +47,7 @@ $ yarn build
 $ yarn start
 ```
 
-`http://localhost:4000`にアクセス
+`http://localhost:3000`にアクセス
 
 その前に`yarn build`を実行する必要がある
 
