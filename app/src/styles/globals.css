@@ -1,6 +1,6 @@
 /* リセットCSS（tailwindのpreflightより優先度を下げるため最下位のレイヤーに置く） */
-@import "./normalize.css" layer(normalize);
-@import "tailwindcss";
+@import './normalize.css' layer(normalize);
+@import 'tailwindcss';
 
 /*
   Tailwind CSS v4 でデフォルトのborder色がcurrentcolorに変わったため、
@@ -20,8 +20,18 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif;
 }
 
 a {
