@@ -16,7 +16,7 @@
 - ローカルサーバ起動
 
 ```sh
-$ yarn dev
+$ pnpm dev
 ```
 
 `http://localhost:3000`にアクセス
@@ -24,19 +24,19 @@ $ yarn dev
 - リンター(ESlint)
 
 ```sh
-$ yarn lint
+$ pnpm lint
 ```
 
 - フォーマッター(Prettier)
 
 ```sh
-$ yarn format
+$ pnpm format
 ```
 
 - ビルド
 
 ```sh
-$ yarn build
+$ pnpm build
 ```
 
 ビルドを行うと`/app/.next/`にビルドファイル群が作成されます。
@@ -44,20 +44,20 @@ $ yarn build
 - 本番環境起動
 
 ```sh
-$ yarn start
+$ pnpm start
 ```
 
 `http://localhost:3000`にアクセス
 
-その前に`yarn build`を実行する必要がある
+その前に`pnpm build`を実行する必要がある
 
 - テスト（Vitest + Testing Library）
 
 ```sh
 # ウォッチモード
-$ yarn test
+$ pnpm test
 # 1回だけ実行
-$ yarn test:run
+$ pnpm test:run
 ```
 
 テストファイルは対象コンポーネントの隣に `*.test.tsx` として置きます。
@@ -67,7 +67,7 @@ $ yarn test:run
 ```sh
 # 初回のみ、ブラウザをインストール
 $ npx playwright install chromium
-$ yarn test:e2e
+$ pnpm test:e2e
 ```
 
 `e2e/` 配下にテストがあります。開発サーバー（ポート 3100）は自動で起動し、microCMS へのリクエストは `e2e/mock-microcms.cjs` でダミーデータに置き換えます。
@@ -75,7 +75,7 @@ $ yarn test:e2e
 - storybook 起動
 
 ```sh
-$ yarn storybook
+$ pnpm storybook
 ```
 
 `http://localhost:6006`にアクセス
@@ -101,4 +101,4 @@ src
 - `@/*` は `src/*` のエイリアスです。
 - 依存方向は `components / lib / types / utils` → `features` → `app` の一方向です。逆方向のimportやfeature同士のimportはESLint（`import-x/no-restricted-paths`）でエラーになります。
 - 新しいfeatureを追加したら、`eslint.config.mjs` の `no-restricted-paths` にfeature間importの禁止ルールを追加してください。
-- aspidaの定義は `src/lib/api` にあり、`yarn api:build` で `$api.ts` を再生成します。
+- aspidaの定義は `src/lib/api` にあり、`pnpm api:build` で `$api.ts` を再生成します。

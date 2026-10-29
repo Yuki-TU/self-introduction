@@ -2,6 +2,7 @@
   "name": "app",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@10.34.9",
   "engines": {
     "node": "24.x"
   },
@@ -71,5 +72,11 @@
     "typescript": "npm:@typescript/typescript6@^6.0.2",
     "vite": "^8.3.5",
     "vitest": "^5.0.5"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "unrs-resolver"
+    ]
   }
 }
