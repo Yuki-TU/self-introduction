@@ -1,38 +1,38 @@
 [tools]
 node = "24"
-yarn = "1"
+pnpm = "10"
 
 [tasks.install]
 description = "依存パッケージをインストール"
 dir = "app"
-run = "yarn install --frozen-lockfile"
+run = "pnpm install --frozen-lockfile"
 
 [tasks.dev]
 description = "開発サーバーを起動 (http://localhost:3000)"
 dir = "app"
-run = "yarn dev"
+run = "pnpm dev"
 
 [tasks.build]
 description = "本番ビルド（microCMSのAPI_KEYが必要）"
 dir = "app"
-run = "yarn build"
+run = "pnpm build"
 
 [tasks.lint]
 description = "ESLintと型チェック"
 dir = "app"
-run = "yarn lint && yarn typecheck"
+run = "pnpm lint && pnpm typecheck"
 
 [tasks.test]
 description = "ユニットテストを1回実行 (Vitest)"
 dir = "app"
-run = "yarn test:run"
+run = "pnpm test:run"
 
 [tasks."test:e2e"]
 description = "E2Eテストを実行 (Playwright)"
 dir = "app"
-run = "yarn test:e2e"
+run = "pnpm test:e2e"
 
 [tasks.storybook]
 description = "Storybookを起動 (http://localhost:6006)"
 dir = "app"
-run = "yarn storybook"
+run = "pnpm storybook"

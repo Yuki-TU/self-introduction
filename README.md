@@ -8,14 +8,14 @@
 # 開発手順
 
 - 必要なツール
-  - [mise](https://mise.jdx.dev/)（Node.js 24・yarn 1 を `mise.toml` で管理）
+  - [mise](https://mise.jdx.dev/)（Node.js 24・pnpm 10 を `mise.toml` で管理）
 
 - 環境構築
 
 ```sh
 $ git clone https://github.com/Yuki-TU/self-introduction.git
 $ cd self-introduction
-# node / yarn のインストール
+# node / pnpm のインストール
 $ mise install
 # パッケージインストール(初回または、新たにパッケージが導入された時のみ)
 $ mise run install

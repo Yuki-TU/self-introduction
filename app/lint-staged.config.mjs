@@ -8,7 +8,7 @@ const buildEslintCommand = (filenames) => {
 };
 
 const config = {
-  '*.{ts,tsx}': [buildEslintCommand, "bash -c 'yarn typecheck'"],
+  '*.{ts,tsx}': [buildEslintCommand, "bash -c 'pnpm typecheck'"],
 };
 
 export default config;
