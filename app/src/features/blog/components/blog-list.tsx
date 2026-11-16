@@ -1,5 +1,3 @@
-import type { MicroCMSListResponse } from 'microcms-js-sdk';
-
 import { paths } from '@/config/paths';
 import type { Content } from '@/types/api';
 import { formatDate } from '@/utils/format';
@@ -7,7 +5,7 @@ import { formatDate } from '@/utils/format';
 import { BlogListItem } from './blog-list-item';
 
 type BlogListProps = {
-  blogs: MicroCMSListResponse<Content>['contents'];
+  blogs: Content[];
 };
 
 /**

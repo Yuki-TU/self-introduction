@@ -1,5 +1,3 @@
-import type { MicroCMSQueries } from 'microcms-js-sdk';
-
 import { env } from '@/config/env';
 
 /**
@@ -10,16 +8,13 @@ import { env } from '@/config/env';
  */
 export const apiFetch = async <T>(
   path: string,
-  queries: MicroCMSQueries = {},
+  queries: Record<string, string | number | undefined> = {},
 ): Promise<T> => {
   const url = new URL(`${env.API_URL}${path}`);
 
   for (const [key, value] of Object.entries(queries)) {
     if (value === undefined) continue;
-    url.searchParams.set(
-      key,
-      Array.isArray(value) ? value.join(',') : String(value),
-    );
+    url.searchParams.set(key, String(value));
   }
 
   const res = await fetch(url, {

@@ -1,5 +1,3 @@
-import type { MicroCMSListResponse } from 'microcms-js-sdk';
-
 import { BlogList } from '@/features/blog/components/blog-list';
 import type { Content } from '@/types/api';
 
@@ -11,7 +9,7 @@ import type { Content } from '@/types/api';
 export const Blogs = ({
   blogs,
 }: {
-  blogs: MicroCMSListResponse<Content>['contents'];
+  blogs: Content[];
 }) => {
   return (
     <main className="mx-auto w-full flex-1 md:w-[1230px]">
