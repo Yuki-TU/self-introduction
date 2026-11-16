@@ -1,11 +1,6 @@
-import {
-  dehydrate,
-  HydrationBoundary,
-  QueryClient,
-} from '@tanstack/react-query';
 import type { Metadata } from 'next';
 
-import { getBlogsQueryOptions } from '@/features/blog/api/get-blogs';
+import { getBlogs } from '@/features/blog/api/get-blogs';
 
 import { Blogs } from './_components/blogs';
 
@@ -19,17 +14,9 @@ export const metadata: Metadata = {
  * @returns コンポーネント
  */
 const BlogsPage = async () => {
-  const queryClient = new QueryClient();
+  const { contents } = await getBlogs();
 
-  await queryClient.prefetchQuery(getBlogsQueryOptions());
-
-  const dehydratedState = dehydrate(queryClient);
-
-  return (
-    <HydrationBoundary state={dehydratedState}>
-      <Blogs />
-    </HydrationBoundary>
-  );
+  return <Blogs blogs={contents} />;
 };
 
 export default BlogsPage;

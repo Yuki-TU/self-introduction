@@ -1,3 +1,1 @@
 *.hbs
-# aspidaの自動生成ファイル
-src/lib/api/$api.ts

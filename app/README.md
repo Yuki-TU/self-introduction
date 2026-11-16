@@ -91,7 +91,7 @@ src
 |   +-- ui       # 汎用UI（Button, Article, Avatar）
 |   +-- layouts  # レイアウト（Header, Footer）
 +-- features     # 機能単位のモジュール（blogなど）。components/ 等をfeatureごとに持つ
-+-- lib          # アプリ向けに設定済みのライブラリ（aspida APIクライアント）
++-- lib          # アプリ向けに設定済みのライブラリ（microCMSのAPIクライアント）
 +-- types        # 共通の型
 +-- utils        # 共通のユーティリティ
 +-- styles       # グローバルCSS
@@ -101,4 +101,4 @@ src
 - `@/*` は `src/*` のエイリアスです。
 - 依存方向は `components / lib / types / utils` → `features` → `app` の一方向です。逆方向のimportやfeature同士のimportはESLint（`import-x/no-restricted-paths`）でエラーになります。
 - 新しいfeatureを追加したら、`eslint.config.mjs` の `no-restricted-paths` にfeature間importの禁止ルールを追加してください。
-- aspidaの定義は `src/lib/api` にあり、`pnpm api:build` で `$api.ts` を再生成します。
+- ブログはSSG（`generateStaticParams`）で、Server Componentがビルド時にmicroCMSから取得します。データ取得は `src/features/blog/api` にあります。

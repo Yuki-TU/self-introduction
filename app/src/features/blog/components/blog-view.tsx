@@ -1,30 +1,18 @@
-'use client';
+import type { MicroCMSObjectContent } from 'microcms-js-sdk';
 
-import { Spinner } from '@/components/ui/spinner';
+import type { Content } from '@/types/api';
 import { formatDate } from '@/utils/format';
-
-import { useBlog } from '../api/get-blog';
 
 /**
  * ブログ詳細コンポーネント
- * @param props.blogId ブログのid
+ * @param props.blog ブログ記事
  * @returns コンポーネント
  */
-export const BlogView = ({ blogId }: { blogId: string }) => {
-  const blogQuery = useBlog({ blogId });
-
-  if (blogQuery.isLoading) {
-    return (
-      <div className="flex h-48 w-full items-center justify-center">
-        <Spinner size="lg" />
-      </div>
-    );
-  }
-
-  const blog = blogQuery.data;
-
-  if (!blog) return null;
-
+export const BlogView = ({
+  blog,
+}: {
+  blog: Content & MicroCMSObjectContent;
+}) => {
   return (
     <>
       <h1 className="text-3xl font-bold">{blog.title}</h1>

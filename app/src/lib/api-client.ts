@@ -1,16 +1,34 @@
-import aspida from '@aspida/fetch';
+import type { MicroCMSQueries } from 'microcms-js-sdk';
 
 import { env } from '@/config/env';
 
-import api from './api/$api';
+/**
+ * microCMSのAPIを呼び出す（サーバー専用。APIキーをブラウザに出さないため）
+ * @param path エンドポイントのパス（例: `/blogs`）
+ * @param queries クエリパラメータ
+ * @returns レスポンスのbody
+ */
+export const apiFetch = async <T>(
+  path: string,
+  queries: MicroCMSQueries = {},
+): Promise<T> => {
+  const url = new URL(`${env.API_URL}${path}`);
 
-const fetchConfig = {
-  headers: {
-    'X-MICROCMS-API-KEY': env.API_KEY!,
-  },
-  baseURL: env.API_URL,
+  for (const [key, value] of Object.entries(queries)) {
+    if (value === undefined) continue;
+    url.searchParams.set(
+      key,
+      Array.isArray(value) ? value.join(',') : String(value),
+    );
+  }
+
+  const res = await fetch(url, {
+    headers: { 'X-MICROCMS-API-KEY': env.API_KEY! },
+  });
+
+  if (!res.ok) {
+    throw new Error(`microCMS API error: ${res.status} ${url.pathname}`);
+  }
+
+  return res.json() as Promise<T>;
 };
-
-// apiクライアント
-// microcmsのデータ取得はこちらを利用
-export const client = api(aspida(fetch, fetchConfig));
