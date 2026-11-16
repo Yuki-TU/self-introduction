@@ -17,6 +17,11 @@ description = "本番ビルド（microCMSのAPI_KEYが必要）"
 dir = "app"
 run = "pnpm build"
 
+[tasks.upgrade]
+description = "next.jsのアップデート"
+dir = "app"
+run = "pnpm next update"
+
 [tasks.lint]
 description = "ESLintと型チェック"
 dir = "app"
