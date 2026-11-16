@@ -1,5 +1,3 @@
-import type { MicroCMSObjectContent } from 'microcms-js-sdk';
-
 import type { Content } from '@/types/api';
 import { formatDate } from '@/utils/format';
 
@@ -11,7 +9,7 @@ import { formatDate } from '@/utils/format';
 export const BlogView = ({
   blog,
 }: {
-  blog: Content & MicroCMSObjectContent;
+  blog: Content;
 }) => {
   return (
     <>

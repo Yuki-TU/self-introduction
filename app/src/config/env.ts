@@ -2,8 +2,8 @@ import * as z from 'zod';
 
 const createEnv = () => {
   const EnvSchema = z.object({
-    // microCMSのAPIキー（サーバー専用のためブラウザ側では未設定になる）
-    API_KEY: typeof window === 'undefined' ? z.string() : z.string().optional(),
+    // microCMSのAPIキー（サーバー専用）
+    API_KEY: z.string(),
     API_URL: z
       .string()
       .optional()

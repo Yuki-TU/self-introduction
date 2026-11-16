@@ -6,3 +6,11 @@ export type Content = {
   createdAt?: string;
   updatedAt?: string;
 };
+
+/** microCMSのリスト形式APIのレスポンス型 */
+export type ListResponse<T> = {
+  contents: T[];
+  totalCount: number;
+  offset: number;
+  limit: number;
+};

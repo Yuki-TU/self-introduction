@@ -1,8 +1,6 @@
-import type { MicroCMSListResponse } from 'microcms-js-sdk';
-
 import { apiFetch } from '@/lib/api-client';
-import type { Content } from '@/types/api';
+import type { Content, ListResponse } from '@/types/api';
 
 export const getBlogs = ({ limit }: { limit?: number } = {}) => {
-  return apiFetch<MicroCMSListResponse<Content>>('/blogs', { limit });
+  return apiFetch<ListResponse<Content>>('/blogs', { limit });
 };
