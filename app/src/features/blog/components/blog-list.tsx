@@ -1,32 +1,21 @@
-'use client';
+import type { MicroCMSListResponse } from 'microcms-js-sdk';
 
-import { Spinner } from '@/components/ui/spinner';
 import { paths } from '@/config/paths';
+import type { Content } from '@/types/api';
 import { formatDate } from '@/utils/format';
-
-import { useBlogs } from '../api/get-blogs';
 
 import { BlogListItem } from './blog-list-item';
 
+type BlogListProps = {
+  blogs: MicroCMSListResponse<Content>['contents'];
+};
+
 /**
  * ブログ一覧コンポーネント
+ * @param props.blogs ブログ記事の一覧
  * @returns コンポーネント
  */
-export const BlogList = () => {
-  const blogsQuery = useBlogs();
-
-  if (blogsQuery.isLoading) {
-    return (
-      <div className="flex h-48 w-full items-center justify-center">
-        <Spinner size="lg" />
-      </div>
-    );
-  }
-
-  const blogs = blogsQuery.data?.contents;
-
-  if (!blogs) return null;
-
+export const BlogList = ({ blogs }: BlogListProps) => {
   return (
     <ul>
       {blogs.map((blog) => (

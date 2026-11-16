@@ -1,11 +1,6 @@
-import {
-  dehydrate,
-  HydrationBoundary,
-  QueryClient,
-} from '@tanstack/react-query';
 import type { Metadata } from 'next';
 
-import { getBlog, getBlogQueryOptions } from '@/features/blog/api/get-blog';
+import { getBlog } from '@/features/blog/api/get-blog';
 import { getBlogs } from '@/features/blog/api/get-blogs';
 
 import { Blog } from './_components/blog';
@@ -29,24 +24,11 @@ export const generateMetadata = async ({
 }: Props): Promise<Metadata> => {
   const { blogId } = await params;
 
-  const blog = await getBlog({ blogId });
+  const blog = await getBlog(blogId);
 
   return {
     title: `y's room - ${blog.title}`,
     description: '自己紹介のトップページです。',
-  };
-};
-
-const preloadData = async (blogId: string) => {
-  const queryClient = new QueryClient();
-
-  await queryClient.prefetchQuery(getBlogQueryOptions(blogId));
-
-  const dehydratedState = dehydrate(queryClient);
-
-  return {
-    dehydratedState,
-    queryClient,
   };
 };
 
@@ -58,17 +40,9 @@ const preloadData = async (blogId: string) => {
 const BlogPage = async ({ params }: Props) => {
   const { blogId } = await params;
 
-  const { dehydratedState, queryClient } = await preloadData(blogId);
+  const blog = await getBlog(blogId);
 
-  const blog = queryClient.getQueryData(getBlogQueryOptions(blogId).queryKey);
-
-  if (!blog) return <div>Blog not found</div>;
-
-  return (
-    <HydrationBoundary state={dehydratedState}>
-      <Blog blogId={blogId} />
-    </HydrationBoundary>
-  );
+  return <Blog blog={blog} />;
 };
 
 export default BlogPage;

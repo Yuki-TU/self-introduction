@@ -1,27 +1,10 @@
-import { queryOptions, useQuery } from '@tanstack/react-query';
+import type { MicroCMSObjectContent } from 'microcms-js-sdk';
+import { cache } from 'react';
 
-import { client } from '@/lib/api-client';
-import { QueryConfig } from '@/lib/react-query';
+import { apiFetch } from '@/lib/api-client';
+import type { Content } from '@/types/api';
 
-export const getBlog = ({ blogId }: { blogId: string }) => {
-  return client.blogs._id(blogId).$get();
-};
-
-export const getBlogQueryOptions = (blogId: string) => {
-  return queryOptions({
-    queryKey: ['blogs', blogId],
-    queryFn: () => getBlog({ blogId }),
-  });
-};
-
-type UseBlogOptions = {
-  blogId: string;
-  queryConfig?: QueryConfig<typeof getBlogQueryOptions>;
-};
-
-export const useBlog = ({ blogId, queryConfig }: UseBlogOptions) => {
-  return useQuery({
-    ...getBlogQueryOptions(blogId),
-    ...queryConfig,
-  });
-};
+// generateMetadataとページ本体で同じ記事を取得するため、リクエスト内で結果を使い回す
+export const getBlog = cache((blogId: string) => {
+  return apiFetch<Content & MicroCMSObjectContent>(`/blogs/${blogId}`);
+});

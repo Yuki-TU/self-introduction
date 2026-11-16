@@ -89,8 +89,6 @@ const eslintConfig = [
   // ファイル名・フォルダ名をkebab-caseに統一（bulletproof-react準拠）
   {
     files: ["src/**/*"],
-    // aspidaの規約（_id@string, $api.ts）に従う必要があるため除外
-    ignores: ["src/lib/api/**"],
     plugins: { "check-file": checkFile },
     rules: {
       "check-file/filename-naming-convention": [
@@ -115,8 +113,6 @@ const eslintConfig = [
     ignores: [
       "generators/**",
       "plopfile.cjs",
-      // aspidaの自動生成ファイル
-      "src/lib/api/$api.ts",
       ".next/**",
       "out/**",
       "build/**",
